@@ -10,7 +10,8 @@ namespace CommandAsSql
         public static String ParameterValueForSQL(this SqlParameter sp)
         {
             String retval = "";
-
+            if (sp.Value == null)
+                    return "null";
             switch (sp.SqlDbType)
             {
                 case SqlDbType.Char:
